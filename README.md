@@ -21,8 +21,14 @@ Mouse Jiggler is a command-line tool that moves your mouse cursor in an ever cha
 First clone the repository:
 
 ```
-git clone https://github.com/yourusername/yourrepository.git
+git clone https://github.com/idrisschebak/mousejiggler
 
+```
+
+or using the GitHub CLI:
+
+```
+gh repo clone idrisschebak/mousejiggler
 ```
 
 Then install the dependencies:
