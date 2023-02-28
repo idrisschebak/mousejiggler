@@ -26,14 +26,6 @@ def jiggle(distance, interval, threshold, speedup_prob):
             speedup_factor = 1.0
         pyautogui.moveRel(x_offset, y_offset, duration=0.25/speedup_factor)
         time.sleep(interval)
-        
-        # Check for mouse movement and exit the loop if the mouse has been moved by more than the threshold
-        new_position = pyautogui.position()
-        distance_moved = math.sqrt((new_position[0] - current_position[0])**2 + (new_position[1] - current_position[1])**2)
-        print(f"Distance moved: {distance_moved:.2f} pixels")
-        if distance_moved > threshold:
-            print(f"Mouse cursor moved by {distance_moved:.2f} pixels. Exiting loop.")
-            break
 
 if __name__ == "__main__":
     jiggle()

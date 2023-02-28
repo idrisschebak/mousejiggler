@@ -25,11 +25,6 @@ git clone https://github.com/idrisschebak/mousejiggler
 
 ```
 
-or using the GitHub CLI:
-
-```
-gh repo clone idrisschebak/mousejiggler
-```
 
 Then install the dependencies:
 
@@ -39,11 +34,14 @@ pip install -r requirements.txt
 
 ### 📝 Usage
 
-To the script:
+To run the script:
 
 ```
 python mouthjiggler.py
 ```
+
+To stop it run ```ctrl+c```
+
 
 ```
 Disclaimer:
