@@ -1,4 +1,4 @@
-import click
+import streamlit as st
 import pyautogui
 import time
 import random
@@ -6,11 +6,6 @@ import math
 
 pyautogui.FAILSAFE = False
 
-@click.command()
-@click.option("--distance", default=50, help="Distance of mouse movement (in pixels)")
-@click.option("--interval", default=0.5, help="Interval between mouse movements (in seconds)")
-@click.option("--speedup-prob", default=0.1, help="Probability of increasing mouse movement speed")
-@click.option("--scale", default=20, help="Scaling factor for Gaussian distribution")
 def jiggle(distance, interval, speedup_prob, scale):
     """
     Move the mouse cursor in a random pattern with the specified distance and interval indefinitely,
@@ -39,5 +34,25 @@ def jiggle(distance, interval, speedup_prob, scale):
         # Sleep for the specified interval
         time.sleep(interval)
 
-if __name__ == "__main__":
-    jiggle()
+# Set up the Streamlit app
+st.title("Mouse Jiggler")
+st.write("Move the mouse cursor in a random pattern with the specified distance and interval.")
+
+# Add sliders for the options
+distance = st.slider("Distance of mouse movement (in pixels)", min_value=10, max_value=100, value=50, step=10)
+interval = st.slider("Interval between mouse movements (in seconds)", min_value=0.1, max_value=1.0, value=0.5, step=0.1)
+speedup_prob = st.slider("Probability of increasing mouse movement speed", min_value=0.0, max_value=1.0, value=0.1, step=0.1)
+scale = st.slider("Scaling factor for Gaussian distribution", min_value=10, max_value=30, value=20, step=5)
+
+# Start and stop jiggling
+jiggler_button = st.button("Start Jiggling")
+stop_button = st.button("Stop Jiggling")
+
+if jiggler_button:
+    st.session_state.jiggling = True
+
+if stop_button:
+    st.session_state.jiggling = False
+
+if st.session_state.jiggling:
+    jiggle(distance, interval, speedup_prob, scale)
