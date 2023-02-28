@@ -23,8 +23,19 @@ To install the dependencies, run the following commands:
 ```
 brew install python3
 pip install mousejiggler
+export PATH="/path/to/mousejiggler:$PATH" #pip show mousejiggler to see the path
+```
+and then, depending on your shell, run either:
+
+```
+source ~/.bashrc
 ```
 
+or
+
+```
+source ~/.zshrc
+```
 
 # Usage
 
