@@ -43,9 +43,6 @@ To stop it run ```ctrl+c```
 
 Infos :
 ```
-Disclaimer:
-Make sure your doing it within the repository ,) otherwise, it won't work.
-
 """
 Usage: mousejiggler.py [-h] [-d DISTANCE] [-i INTERVAL] [-t THRESHOLD] [-s SPEEDUP_PROBABILITY]
 
