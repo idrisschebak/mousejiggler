@@ -46,6 +46,7 @@ To stop the script simply push CTRL+C.
 Disclaimer:
 Make sure your doing it within the repository ,) otherwise, it won't work.
 
+```
 """
 Usage: mousejiggler.py [-h] [-d DISTANCE] [-i INTERVAL] [-t THRESHOLD] [-s SPEEDUP_PROBABILITY]
 
@@ -63,6 +64,7 @@ Optional arguments:
   -s SPEEDUP_PROBABILITY, --speedup-probability SPEEDUP_PROBABILITY
                         Probability of increasing mouse movement speed
 """
+```
 
 Optionally, you also change the parameters:
 
