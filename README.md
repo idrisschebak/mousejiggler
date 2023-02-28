@@ -41,6 +41,7 @@ python mouthjiggler.py
 To stop it run ```ctrl+c```
 
 
+Infos :
 ```
 Disclaimer:
 Make sure your doing it within the repository ,) otherwise, it won't work.
