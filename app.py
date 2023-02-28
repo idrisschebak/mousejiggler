@@ -39,14 +39,24 @@ def jiggle(distance, interval, speedup_prob, scale, duration):
 st.title(" 🐭 Mouse Jiggler")
 st.write("Move the mouse cursor in a random pattern with the specified distance and interval.")
 
-# Add sliders for the options
-distance = st.slider("Distance of mouse movement (in pixels)", min_value=10, max_value=100, value=50, step=10)
-interval = st.slider("Interval between mouse movements (in seconds)", min_value=0.1, max_value=1.0, value=0.5, step=0.1)
-speedup_prob = st.slider("Probability of increasing mouse movement speed", min_value=0.0, max_value=1.0, value=0.1, step=0.1)
-scale = st.slider("Scaling factor for Gaussian distribution", min_value=10, max_value=30, value=20, step=5)
-duration = st.slider("Duration of mouse jiggling (in seconds)", min_value=10, max_value=3600, value=60, step=10)
+# Add collapsible section for the options
+with st.expander("Options"):
+    distance = st.slider("Distance of mouse movement (in pixels)", min_value=10, max_value=100, value=50, step=10)
+    interval = st.slider("Interval between mouse movements (in seconds)", min_value=0.1, max_value=1.0, value=0.5, step=0.1)
+    speedup_prob = st.slider("Probability of increasing mouse movement speed", min_value=0.0, max_value=1.0, value=0.1, step=0.1)
+    scale = st.slider("Scaling factor for Gaussian distribution", min_value=10, max_value=30, value=20, step=5)
 
-# Start the jiggler
-jiggler_button = st.button("Start Jiggling")
+# Add textbox for the duration option
+duration = st.text_input("Duration of mouse jiggling (in seconds)", value="60")
+
+# Center the "Start Jiggling" button
+jiggler_button = st.button("Start Jiggling!", key="jiggler_button")
+jiggler_button_container = st.container()
+with jiggler_button_container:
+    st.write(" ")
 if jiggler_button:
-    jiggle(distance, interval, speedup_prob, scale, duration)
+    jiggle(distance, interval, speedup_prob, scale, int(duration))
+st.markdown("</div>", unsafe_allow_html=True)
+
+if jiggler_button:
+    jiggle(distance, interval, speedup_prob, scale, int(duration))
