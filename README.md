@@ -2,7 +2,7 @@
 
 Are you tired of your cat always distracting you from your work? Do you want to keep your computer active while you're away without risking your screensaver kicking in? Mouse Jiggler is the solution for you!
 
-Mouse Jiggler is a command-line tool that moves your mouse cursor in an ever changing random pattern, keeping your computer active and helping to keep your cat entertained for hours. With adjustable parameters for distance, interval, threshold, and even a speedup probability, you can customize the movement of your mouse to fit your needs and maximize your cat's enjoyment.
+Mouse Jiggler is a Streamlit App that moves your mouse cursor in an ever changing random pattern, keeping your computer active and helping to keep your cat entertained for hours. With adjustable parameters for distance, interval, threshold, and even a speedup probability, you can customize the movement of your mouse to fit your needs and maximize your cat's enjoyment.
 
 ### ✨ Features
 
@@ -43,44 +43,13 @@ pip install -r requirements.txt
 
 #### Run
 
-To run mouseiggler, simply run the following:
+To run mouseiggler, simply run the following within the root directory of the project:
 
 ```
-python mousejiggler.py
+streamlit runn app.py
 ```
 
-#### Stop
 
-To stop the script simply push ```CTRL+C```.
-
-Disclaimer:
-Make sure your doing it within the repository ,) otherwise, it won't work.
-
-```
-"""
-Usage: mousejiggler.py [-h] [-d DISTANCE] [-i INTERVAL] [-t THRESHOLD] [-s SPEEDUP_PROBABILITY]
-
-Move the mouse cursor in a random pattern with the specified distance and interval indefinitely, but break the loop if
-the mouse cursor position changes by more than the threshold.
-
-Optional arguments:
-  -h, --help            show this help message and exit
-  -d DISTANCE, --distance DISTANCE
-                        Distance of mouse movement (in pixels)
-  -i INTERVAL, --interval INTERVAL
-                        Interval between mouse movements (in seconds)
-  -t THRESHOLD, --threshold THRESHOLD
-                        Threshold for mouse movement detection (in pixels)
-  -s SPEEDUP_PROBABILITY, --speedup-probability SPEEDUP_PROBABILITY
-                        Probability of increasing mouse movement speed
-"""
-```
-
-Optionally, you also change the parameters:
-
-```
-python jiggle.py --distance 10 --interval 0.5 --threshold 5 --speedup-prob 0.1
-```
 
 # 💡 Reporting Bugs and Contributing
 
