@@ -2,7 +2,7 @@
 
 Are you tired of your cat always distracting you from your work? Do you want to keep your computer active while you're away without risking your screensaver kicking in? Mouse Jiggler is the solution for you!
 
-Mouse Jiggler is a Streamlit App that moves your mouse cursor in an ever changing random pattern, keeping your computer active and helping to keep your cat entertained for hours. With adjustable parameters for distance, interval, threshold, and even a speedup probability, you can customize the movement of your mouse to fit your needs and maximize your cat's enjoyment.
+Mouse Jiggler is a CLI App that moves your mouse cursor in an ever changing random pattern, keeping your computer active and helping to keep your cat entertained for hours. With adjustable parameters for distance, interval, threshold, and even a speedup probability, you can customize the movement of your mouse to fit your needs and maximize your cat's enjoyment.
 
 ### ✨ Features
 
