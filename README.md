@@ -18,32 +18,38 @@ Mouse Jiggler is a command-line tool that moves your mouse cursor in an ever cha
 
 ### 🚀 Installation 
 
-To install the dependencies, run the following commands:
+First clone the repository:
 
 ```
-brew install python3
-pip install mousejiggler
-export PATH="/path/to/mousejiggler:$PATH" #pip show mousejiggler to see the path
-```
-and then, depending on your shell, run either:
+git clone https://github.com/yourusername/yourrepository.git
 
 ```
-source ~/.bashrc
-```
 
-or
+Then install the dependencies:
 
 ```
-source ~/.zshrc
+pip install -r requirements.txt
 ```
 
-# Usage
+### 📝 Usage
 
-run the following command to start the mouse jiggler:
+"""
+Usage: mousejiggler.py [-h] [-d DISTANCE] [-i INTERVAL] [-t THRESHOLD] [-s SPEEDUP_PROBABILITY]
 
-```
-mousejiggler
-```
+Move the mouse cursor in a random pattern with the specified distance and interval indefinitely, but break the loop if
+the mouse cursor position changes by more than the threshold.
+
+Optional arguments:
+  -h, --help            show this help message and exit
+  -d DISTANCE, --distance DISTANCE
+                        Distance of mouse movement (in pixels)
+  -i INTERVAL, --interval INTERVAL
+                        Interval between mouse movements (in seconds)
+  -t THRESHOLD, --threshold THRESHOLD
+                        Threshold for mouse movement detection (in pixels)
+  -s SPEEDUP_PROBABILITY, --speedup-probability SPEEDUP_PROBABILITY
+                        Probability of increasing mouse movement speed
+"""
 
 # 💡 Reporting Bugs and Contributing
 
