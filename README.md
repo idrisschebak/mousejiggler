@@ -22,7 +22,6 @@ First clone the repository:
 
 ```
 git clone https://github.com/idrisschebak/mousejiggler
-
 ```
 
 Then install the dependencies:
