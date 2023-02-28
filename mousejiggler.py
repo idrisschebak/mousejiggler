@@ -16,11 +16,8 @@ def jiggle(distance, interval, threshold, speedup_prob):
     Move the mouse cursor in a random pattern with the specified distance and interval indefinitely,
     but break the loop if the mouse cursor position changes by more than the threshold.
     """
-    current_position = pyautogui.position()
-    prev_pos = current_position
-    speedup_factor = 1.0
-
     while True:
+        current_position = pyautogui.position()
         x_offset = random.randint(-distance, distance)
         y_offset = random.randint(-distance, distance)
         if random.random() < speedup_prob:
@@ -37,7 +34,6 @@ def jiggle(distance, interval, threshold, speedup_prob):
         if distance_moved > threshold:
             print(f"Mouse cursor moved by {distance_moved:.2f} pixels. Exiting loop.")
             break
-        current_position = new_position
 
 if __name__ == "__main__":
     jiggle()
