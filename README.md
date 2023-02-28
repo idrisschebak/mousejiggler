@@ -41,11 +41,15 @@ pip install -r requirements.txt
 
 ### 📝 Usage
 
+#### Run
+
 To run mouseiggler, simply run the following:
 
 ```
 python mousejiggler.py
 ```
+
+#### Stop
 
 To stop the script simply push CTRL+C.
 
