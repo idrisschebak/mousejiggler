@@ -2,7 +2,8 @@ import streamlit as st
 import pyautogui
 import time
 import random
-import math
+import threading
+import keyboard
 
 pyautogui.FAILSAFE = False
 
@@ -15,7 +16,7 @@ def jiggle(distance, interval, speedup_prob, scale):
     distance_factor = 1.0
     duration_factor = 1.0
 
-    while True:
+    while st.session_state.jiggling:
         # Generate random values for x and y offsets following a Gaussian distribution
         x_offset = int(random.gauss(0, 1) * scale * distance_factor)
         y_offset = int(random.gauss(0, 1) * scale * distance_factor)
@@ -38,6 +39,10 @@ def jiggle(distance, interval, speedup_prob, scale):
 st.title("Mouse Jiggler")
 st.write("Move the mouse cursor in a random pattern with the specified distance and interval.")
 
+# Initialize the jiggling session state variable
+if "jiggling" not in st.session_state:
+    st.session_state.jiggling = False
+
 # Add sliders for the options
 distance = st.slider("Distance of mouse movement (in pixels)", min_value=10, max_value=100, value=50, step=10)
 interval = st.slider("Interval between mouse movements (in seconds)", min_value=0.1, max_value=1.0, value=0.5, step=0.1)
@@ -49,10 +54,14 @@ jiggler_button = st.button("Start Jiggling")
 stop_button = st.button("Stop Jiggling")
 
 if jiggler_button:
-    st.session_state.jiggling = True
+    if not st.session_state.jiggling:
+        st.session_state.jiggling = True
+        jiggling_thread = threading.Thread(target=jiggle, args=(distance, interval, speedup_prob, scale))
+        jiggling_thread.start()
 
 if stop_button:
     st.session_state.jiggling = False
 
-if st.session_state.jiggling:
-    jiggle(distance, interval, speedup_prob, scale)
+# Listen for space bar press to stop jiggling
+if keyboard.is_pressed(" "):
+    st.session_state.jiggling = False
