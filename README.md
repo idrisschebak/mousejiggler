@@ -31,28 +31,18 @@ Then install the dependencies:
 pip install -r requirements.txt
 ```
 
-Finally, run the script:
+
+
+### 📝 Usage
+
+To the script:
 
 ```
 python mousejiggler.py
 ```
 
-Optionally, you also change the parameters:
-
-```
-python jiggle.py --distance 10 --interval 0.5 --threshold 5 --speedup-prob 0.1
-```
-
-You can also run the script directly from the GitHub repository:
-
-```
-python -m pip install git+
-
-```
-
-
-
-### 📝 Usage
+Disclaimer:
+Make sure your doing it within the repository ,) otherwise, it won't work.
 
 """
 Usage: mousejiggler.py [-h] [-d DISTANCE] [-i INTERVAL] [-t THRESHOLD] [-s SPEEDUP_PROBABILITY]
@@ -71,6 +61,12 @@ Optional arguments:
   -s SPEEDUP_PROBABILITY, --speedup-probability SPEEDUP_PROBABILITY
                         Probability of increasing mouse movement speed
 """
+
+Optionally, you also change the parameters:
+
+```
+python jiggle.py --distance 10 --interval 0.5 --threshold 5 --speedup-prob 0.1
+```
 
 # 💡 Reporting Bugs and Contributing
 
