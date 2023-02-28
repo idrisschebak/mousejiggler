@@ -36,7 +36,7 @@ def jiggle(distance, interval, speedup_prob, scale, duration):
         time.sleep(interval)
 
 # Set up the Streamlit app
-st.title("Mouse Jiggler")
+st.title(" 🐭 Mouse Jiggler")
 st.write("Move the mouse cursor in a random pattern with the specified distance and interval.")
 
 # Add sliders for the options
