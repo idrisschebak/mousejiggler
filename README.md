@@ -51,7 +51,7 @@ python mousejiggler.py
 
 #### Stop
 
-To stop the script simply push CTRL+C.
+To stop the script simply push ```CTRL+C```.
 
 Disclaimer:
 Make sure your doing it within the repository ,) otherwise, it won't work.
