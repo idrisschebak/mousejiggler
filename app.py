@@ -2,6 +2,8 @@ import streamlit as st
 import pyautogui
 import time
 import random
+import os
+os.environ['DISPLAY'] = ':0'
 import math
 
 pyautogui.FAILSAFE = False
