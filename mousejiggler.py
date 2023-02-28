@@ -3,11 +3,10 @@ import pyautogui
 import time
 import random
 import threading
-import keyboard
 
 pyautogui.FAILSAFE = False
 
-def jiggle(distance, interval, speedup_prob, scale):
+def jiggle(distance, interval, speedup_prob, scale, stop_event):
     """
     Move the mouse cursor in a random pattern with the specified distance and interval indefinitely,
     following a random Gaussian curve with mean 0 and standard deviation 1.
@@ -16,7 +15,7 @@ def jiggle(distance, interval, speedup_prob, scale):
     distance_factor = 1.0
     duration_factor = 1.0
 
-    while st.session_state.jiggling:
+    while not stop_event.is_set():
         # Generate random values for x and y offsets following a Gaussian distribution
         x_offset = int(random.gauss(0, 1) * scale * distance_factor)
         y_offset = int(random.gauss(0, 1) * scale * distance_factor)
@@ -56,12 +55,15 @@ stop_button = st.button("Stop Jiggling")
 if jiggler_button:
     if not st.session_state.jiggling:
         st.session_state.jiggling = True
-        jiggling_thread = threading.Thread(target=jiggle, args=(distance, interval, speedup_prob, scale))
+        stop_event = threading.Event()
+        jiggling_thread = threading.Thread(target=jiggle, args=(distance, interval, speedup_prob, scale, stop_event))
         jiggling_thread.start()
 
 if stop_button:
-    st.session_state.jiggling = False
+    if st.session_state.jiggling:
+        st.session_state.jiggling = False
+        stop_event.set()
 
-# Listen for space bar press to stop jiggling
-if keyboard.is_pressed(" "):
-    st.session_state.jiggling = False
+# Add timer to stop jiggling after a certain amount of time
+if st.session_state.jiggling:
+    jiggling_time = st.slider("J
