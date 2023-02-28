@@ -1,12 +1,10 @@
-import streamlit as st
-import pyautogui
 import time
 import random
-import os
-os.environ['DISPLAY'] = ':0'
+import streamlit as st
 import math
+from pynput.mouse import Controller
 
-pyautogui.FAILSAFE = False
+mouse = Controller()
 
 def jiggle(distance, interval, speedup_prob, scale, duration):
     """
@@ -32,7 +30,7 @@ def jiggle(distance, interval, speedup_prob, scale, duration):
             speedup_factor = 1.0
 
         # Move the mouse cursor with the specified x and y offsets and duration
-        pyautogui.moveRel(x_offset, y_offset, duration=0.25/speedup_factor*duration_factor)
+        mouse.move(x_offset, y_offset, duration=0.25/speedup_factor*duration_factor)
 
         # Sleep for the specified interval
         time.sleep(interval)
@@ -52,13 +50,13 @@ with st.expander("Options"):
 duration = st.text_input("Duration of mouse jiggling (in seconds)", value="60")
 
 # Center the "Start Jiggling" button
-jiggler_button = st.button("Start Jiggling!", key="jiggler_button")
+jiggler_button = st.button("Start Jiggling", key="jiggler_button")
 jiggler_button_container = st.container()
+with jiggler_button_container:
+    st.write(" ")
+st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
 with jiggler_button_container:
     st.write(" ")
 if jiggler_button:
     jiggle(distance, interval, speedup_prob, scale, int(duration))
 st.markdown("</div>", unsafe_allow_html=True)
-
-if jiggler_button:
-    jiggle(distance, interval, speedup_prob, scale, int(duration))

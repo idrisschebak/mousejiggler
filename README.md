@@ -41,15 +41,48 @@ pip install -r requirements.txt
 
 ### 📝 Usage
 
+<<<<<<< HEAD
 #### Run
 
 To run mouseiggler, simply run the following within the root directory of the project:
+=======
+To the script:
+>>>>>>> parent of b973a5a (add description)
 
 ```
 streamlit runn app.py
 ```
 
+<<<<<<< HEAD
 
+=======
+Disclaimer:
+Make sure your doing it within the repository ,) otherwise, it won't work.
+
+"""
+Usage: mousejiggler.py [-h] [-d DISTANCE] [-i INTERVAL] [-t THRESHOLD] [-s SPEEDUP_PROBABILITY]
+
+Move the mouse cursor in a random pattern with the specified distance and interval indefinitely, but break the loop if
+the mouse cursor position changes by more than the threshold.
+
+Optional arguments:
+  -h, --help            show this help message and exit
+  -d DISTANCE, --distance DISTANCE
+                        Distance of mouse movement (in pixels)
+  -i INTERVAL, --interval INTERVAL
+                        Interval between mouse movements (in seconds)
+  -t THRESHOLD, --threshold THRESHOLD
+                        Threshold for mouse movement detection (in pixels)
+  -s SPEEDUP_PROBABILITY, --speedup-probability SPEEDUP_PROBABILITY
+                        Probability of increasing mouse movement speed
+"""
+
+Optionally, you also change the parameters:
+
+```
+python jiggle.py --distance 10 --interval 0.5 --threshold 5 --speedup-prob 0.1
+```
+>>>>>>> parent of b973a5a (add description)
 
 # 💡 Reporting Bugs and Contributing
 
