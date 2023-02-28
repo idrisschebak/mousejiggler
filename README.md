@@ -65,8 +65,7 @@ Optional arguments:
 """
 ```
 
-Optionally, you also change the parameters:
-
+Optionally, you can also change the parameters:
 ```
 python jiggle.py --distance 10 --interval 0.5 --threshold 5 --speedup-prob 0.1
 ```
