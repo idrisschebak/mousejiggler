@@ -1,4 +1,4 @@
-# 😼 Keep your cat busy, with MouseJiggler! 
+# Keep your cat busy, with MouseJiggler! 
 
 Are you tired of your cat always distracting you from your work? Do you want to keep your computer active while you're away without risking your screensaver kicking in? Mouse Jiggler is the solution for you!
 
