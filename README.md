@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ### 📝 Usage
 
-To run the script:
+Run the script from the root of the repository:
 
 ```
 python mouthjiggler.py
