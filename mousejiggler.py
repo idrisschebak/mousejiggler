@@ -13,8 +13,7 @@ pyautogui.FAILSAFE = False
 @click.option("--speedup-prob", default=0.1, help="Probability of increasing mouse movement speed")
 def jiggle(distance, interval, threshold, speedup_prob):
     """
-    Move the mouse cursor in a random pattern with the specified distance and interval indefinitely,
-    but break the loop if the mouse cursor position changes by more than the threshold.
+    Move the mouse cursor in a random pattern with the specified distance and interval indefinitely.
     """
     while True:
         current_position = pyautogui.position()
