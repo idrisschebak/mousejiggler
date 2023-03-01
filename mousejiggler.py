@@ -7,7 +7,7 @@ import random
 pyautogui.FAILSAFE = False
 
 @click.command()
-@click.option("--distance", default=10, help="Distance of mouse movement (in pixels)")
+@click.option("--distance", default=30, help="Distance of mouse movement (in pixels)")
 @click.option("--interval", default=0.5, help="Interval between mouse movements (in seconds)")
 @click.option("--threshold", default=5, help="Threshold for mouse movement detection (in pixels)")
 @click.option("--speedup-prob", default=0.1, help="Probability of increasing mouse movement speed")
