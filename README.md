@@ -11,11 +11,6 @@ Mouse Jiggler is a CLI App that moves your mouse cursor in an ever changing rand
 - **Threshold**: This parameter determines the maximum distance (in pixels) that the mouse cursor can move before the loop is exited. If the cursor moves beyond this distance during a single movement, the loop will exit automatically. This can be used to detect manual movements of the mouse cursor and prevent interference with the automated movement pattern.
 - **Speedup probability**: This parameter controls the probability that the mouse cursor will move with a higher speed than usual. When this parameter is set to a value greater than 0, the program will randomly choose a factor between 1.0 and 3.0 to increase the speed of the movement. This can be used to add some variability to the movement pattern and keep your cat more engaged.
 
-
-### 🛣️ Roadmap
-
-- **cats**: add more cats!.
-
 ### 🚀 Installation 
 
 First clone the repository:
