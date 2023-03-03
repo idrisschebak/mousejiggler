@@ -4,6 +4,8 @@
 
 Mouse Jiggler is a CLI App that moves your mouse cursor in an ever changing random pattern, keeping your computer active and helping to keep your cat entertained for hours. With adjustable parameters for distance, interval, threshold, and even a speedup probability, you can customize the movement of your mouse to fit your needs and maximize your cat's enjoyment.
 
+Try it out today and say hello to uninterrupted productivity!
+
 ### ✨ Features
 
 - **Distance**: This parameter controls the maximum distance (in pixels) that the mouse cursor can move in any direction during each movement. Increasing this value will result in larger movements and a wider range of potential cursor locations.
